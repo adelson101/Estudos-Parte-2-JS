@@ -86,12 +86,13 @@
     function Iniciar() {
         var teclas = document.querySelectorAll('input[type="button"]');
         for (let i = 0; i < teclas.length; i++) {
-            teclas[i].onclick = () => VerificarRegras(teclas[i]);   // Inseri cada tecla uma função de inserir o numero
+            teclas[i].onclick = () => TeclarTelefone(teclas[i]);   // Inseri cada tecla uma função de inserir o numero
         }
     }
 
-    function VerificarRegras(tecla) { //Insere o valor do numero na tela do telefone e cria as regras da mascara de numero
+    function TeclarTelefone(tecla) { //Insere o valor do numero na tela do telefone e cria as regras da mascara de numero
         let tel = document.querySelector('input[type="tel"]');
+        
         if (tecla.value=='delete'){
                 tel.value = tel.value.substring(0,tel.value.length-1)
         } 
