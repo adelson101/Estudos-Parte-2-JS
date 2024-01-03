@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+        box-sizing: border-box;
+        }
+
+        body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #191919;
+        min-height: 100vh;
+        }
+
+        input {
+        border: none;
+        color: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        font-family: inherit;
+        }
+
+        h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 24px;
+        color: #fff;
+        }
+
+        .teclado {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px; 
+        background-color: #cccccc;
+        border-radius: 30px;
+        padding: 10px;
+        }
+
+        input[type=button] {
+        border-radius: 20px;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+        height: 80px;
+        width: 80px;
+        }
+
+        input[type=tel] {
+        background-color: #cccccc;
+        border-radius: 10px;
+        font-family: monospace;
+        font-size: 22px;
+        height: 40px;
+        margin-bottom: 24px;
+        padding: 10px;
+        text-align: center;
+        width: 280px;
+        }
+    </style>
+</head>
+<body">
+    <h1> Alura Fone </h1>
+    <input type="tel" placeholder="Digite seu telefone" maxlength="15" readonly>
+    <section class="teclado">
+    <input type="button" value="1">
+    <input type="button" value="2">
+    <input type="button" value="3">
+    <input type="button" value="4">
+    <input type="button" value="5">
+    <input type="button" value="6">
+    <input type="button" value="7">
+    <input type="button" value="8">
+    <input type="button" value="9">
+    <input type="button" value="*">
+    <input type="button" value="0">
+    <input type="button" value="#">
+    <input type="button" value="delete">
+  </section>
+
+  <script>
+        var teclas = document.querySelectorAll('input[type="button"]');
+        for (let i = 0; i < teclas.length; i++) {
+            teclas[i].addEventListener("mouseup", (event) => {
+                let tel = document.querySelector('input[type="tel"]');
+                if (i==teclas.length-1){
+                   tel.value = tel.value.substring(0,tel.value.length-1)
+                }else {
+                    if (tel.value.length<15){
+                        if (teclas[i].value!='#' && teclas[i].value!='*'){
+                            if(tel.value.indexOf('#')==-1 && tel.value.indexOf('*')==-1){
+                                tel.value = maskTel(tel.value.length,tel.value,teclas[i].value);
+                            }else {
+                                tel.value = tel.value+teclas[i].value;
+                            }
+                        }else {
+                            tel.value = tel.value+teclas[i].value;
+                        } 
+                }
+                }
+
+            })          
+        }
+
+    function maskTel(NumCarac,Dig,tecla){
+        switch (NumCarac) {
+            case 0:
+            return `(${tecla}`;
+            case 3:
+            return `${Dig}) ${tecla}`;
+            case 10:
+            return `${Dig}-${tecla}`;
+            default:
+            return `${Dig}${tecla}`;
+        }
+    }
+
+  </script>
+</body>
+</html>
