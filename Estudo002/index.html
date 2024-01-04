@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fokus</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header><div class="Logo"></div></header>
+    <section>
+        <h1>Otimize sua produtividade,<br><strong>mergulhe no que importa</strong></h1>
+        <div id="Imagem-Foco">
+    </section>
+    <section>
+        <div class="box-container-cronometro">
+            <ul class="botoes-cronometro">
+                <li><button>Foco</button></li>
+                <li><button>Descanso curto</button></li>
+                <li><button>Descanso longo</button></li>
+            </ul>
+            <h1 class="Tempo-cronometro">00:00</h1>
+
+            <div class="box-switch">
+                <label class="switch">
+                    <input type="checkbox" id="caixa-switch">
+                    <span class="slider"></span>
+                </label><p> Música</p>
+            </div>
+            <button class="BotaoFillDeg"><span class="material-symbols-outlined">play_arrow</span>Começar</button>
+        </div>
+        <div class="Tarefas-footer">
+            <p>#Em andamento:</p>
+            <h2>Nome da tarefa em andamento</h2>
+        </div>
+    </section>
+    <section>
+        <div class="Titulo-tarefa-box">
+            <h1 class="titulo-tarefas">Lista de tarefas:</h1>
+            <button></button>
+        </div>
+        <ul class="ListaDeTarefas">
+        </ul>
+        <button class="BotaoBorder Roxo Pequeno" onclick="AdicionarTarefa()"><span class="material-symbols-outlined">add_circle</span>Adicionar nova tarefa</button>
+    </section>
+    <footer>
+        Projeto fictício e sem fins comerciais. Imagens geradas por IA no Adobe Firefly.<br>Desenvolvido por Alura. 
+    </footer>
+
+    <script src="script/main.js"></script>
+</body>
+</html>

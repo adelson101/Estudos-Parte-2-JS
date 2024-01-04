@@ -1,0 +1,441 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Unbounded:wght@200;400&display=swap');
+
+* {
+    --ModoFoco: linear-gradient(180deg, #8B1FF8 0%, #041832 48.44%, #01080E 100%);
+    --ModoDescansoCurto: linear-gradient(180deg, #0F725C 0%, #041832 48.44%, #01080E 100%);
+    --ModoDescansoLongo: linear-gradient(180deg, #1875E9 0%, #041832 48.44%, #01080E 100%);
+    --BotaoLinear: linear-gradient(180deg, #B872FF 0%, #144480 100%);
+    --cor1: #B872FF;
+    --cor2: #01080E;
+    --cor3: #041832;
+    --cor4: #144480;
+    --cor5: white;
+    --FundoCards: rgba(255, 255, 255, 0.50);
+    --FundoCrono: #1444804D;
+    --FundoTarefaCon: #00F4BF66;
+    --Check: #02CDA1;
+    --FundoDaPagina: linear-gradient(180deg, #8B1FF8 0%, #041832 48.44%, #01080E 100%);
+}
+
+:root {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-image: var(--FundoDaPagina);
+}
+
+body::after {
+    content: '';
+    background-image: url('../image/526be9d7c618bc3b9ff652e2a6b81a02.png');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+/* Estilo de cabeçalho */
+
+    header {
+        margin: 40px 0;
+        width: 100%;
+    }
+
+    header .Logo {
+        background-image: url('../image/Fokus\ -\ \ logo-02\ 1.svg');
+        width: 156.364px;
+        height: 40px;
+        margin: auto;
+    }
+
+/* Final Estilo de cabeçalho */
+
+/* Estilo das Caixas */
+
+section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 35px 0;
+}
+
+#Imagem-Foco {
+    background-image: url('../image/foco.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 300px;
+    height: 250px;
+    opacity: .9;
+}
+
+.box-container-cronometro{
+    width: 310px;
+    height: 320px;
+    padding: 24px;
+    border-radius: 32px;
+    border: 2px solid var(--cor4);
+    background: var(--FundoCrono);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Final Estilo das Caixas */
+
+/* Caixa de Crometro*/
+
+.botoes-cronometro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botoes-cronometro li > button{
+    color: var(--cor5);
+    text-align: center;
+    padding: 5px;
+
+    font-family: 'Montserrat';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.botoes-cronometro li > button:hover,
+.ativar-button {
+    background-color: var(--cor4);
+    border-radius: 7px;
+    padding: 5px;
+    font-weight: 700;
+    transition: all .2s;
+}
+
+.Tempo-cronometro {
+    color: var(--cor5);
+    text-align: center;
+
+    font-family: Unbounded;
+    font-size: 53.7px;
+    font-style: normal;
+    font-weight: 600;
+    width: 100%;
+    margin: 0;
+}
+
+.Tarefas-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--cor4);
+    width: 310px;
+}
+
+.Tarefas-footer p {
+    color: var(--cor5);
+    text-align: center;
+
+    font-family: 'Montserrat';
+    font-size: 12.5px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 18.75px */
+}
+
+.Tarefas-footer h2 {
+    color: var(--cor5);
+    text-align: center;
+    
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 27px */
+}
+
+/* Final Caixa de Crometro */
+
+/* Caixa de Switch */
+
+.box-switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--cor5);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--cor3);
+    transform: .4s;
+    border-radius: 30px;
+}
+
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--cor5);
+    transition: .4s;
+    border-radius: 30px;
+}
+
+input:checked + .slider {
+    background-color: var(--cor1);
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Final Caixa de Switch */
+
+/* Estilo de Textos */
+
+    h1 {
+        font-weight: 200;
+        color: var(--cor5);
+        font-size: 1.5rem;
+        font-family: 'Unbounded', sans-serif;
+        line-height: 150%; /* 39px */
+        width: 300px;
+        margin: 1.2rem 0;
+        text-align: start;
+    }
+
+    h1 strong {
+        font-weight: 400;
+    }
+
+    section .titulo-tarefas {
+        padding-bottom: 2rem;
+        margin: 0;
+        text-align: center;
+        font-family: 'Unbounded';
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%; /* 31.2px */
+    }
+
+/* Final Estilo de Textos */
+
+/* Estilo Botões */
+    .BotaoFillDeg {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: var(--BotaoLinear);
+        color: var(--cor5);
+        border: none;
+        border-radius: 30px;
+
+        width: 180px;
+        height: 40px;
+        
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 150%;
+    }
+
+    .BotaoFillDeg:hover , .BotaoFillDeg:active {
+        transition: border .1s ease-in-out;
+        border: 1px solid var(--cor5);
+    }
+
+    button {
+        display: flex;
+        gap: 6px;
+    }
+
+    .BotaoBorder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: solid 2px;
+        border-radius: 30px;
+        padding: .5rem 2rem;
+        background: none;
+    }
+
+    .BotaoBorder.Branco {
+        border-color: var(--cor5);
+    }
+
+    .BotaoBorder.Roxo {
+        border-color: var(--cor1);
+        color: var(--cor1);
+
+        font-family: 'Montserrat';
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 150%; /* 27px */
+    }
+
+    .BotaoBorder.Grande {
+        padding: 1rem 170px;
+    }
+
+    .BotaoBorder.Pequeno {
+        padding: .8rem 0;
+        width: 310px;
+    }
+
+    .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 16
+    }
+
+/* Final Estilo Botões */
+
+/* Footer */
+
+    footer {
+        padding: 1.4rem;
+
+        color: rgba(182, 182, 182, 0.80);
+        text-align: center;
+
+        /* Paragraph Small */
+        font-family: 'Montserrat';
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; /* 22.5px */
+    }
+
+/* Final  Footer*/
+
+/* Caixa Estilos JS */
+
+.bloco-tarefa {
+    background-color: var(--FundoCards);
+    border-radius: 8px;
+    padding: 1rem;
+    width: 310px;
+}
+
+.bloco-tarefa.adicionar {
+    margin-bottom: 2.3rem;
+}
+
+.bloco-tarefa h1 {
+    color: var(--cor2);
+    font-family: 'Unbounded';
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; 
+    width: 100%;
+    margin: 0;
+}
+
+.Area-Tarefa {
+    border-radius: 8px;
+    background: var(--FundoCards);
+
+    display: flex;
+    padding: 16px;
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.botoes-tarefa-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.botaoNoBorder {
+    color: var(--cor2);
+
+    font-family: 'Montserrat';
+    font-size: 12.5px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 18.75px */
+    display: flex;
+    align-items: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.botaoNoBorder:hover {
+    transition: color .2s ease-in-out;
+    color: white;
+}
+
+.botaoNoBorder:active {
+    color: rgb(68, 68, 68);
+    transition :all .1s ease-in-out;
+}
+
+.botaoBasic {
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: .8rem;
+    background-color: var(--cor2);
+    border-radius: 30px;
+
+    font-family: 'Montserrat';
+    font-size: 12.5px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 18.75px */
+}
+
+.botaoBasic:hover{
+    transition: color .2s ease-in-out;
+    background-color: white;
+    color: var(--cor2);
+}
+
+.botaoBasic:active {
+    background-color: rgb(170, 170, 170);
+    color: rgb(24, 24, 24);
+}
+
+.botaoBasic span, .botaoNoBorder span {
+    font-size: 1rem;
+}
+
