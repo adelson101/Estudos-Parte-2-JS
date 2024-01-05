@@ -1,34 +1,39 @@
 const botoes = document.querySelectorAll('ul.botoes-cronometro> li button');
+
 for (let i = 0; i < botoes.length; i++) {
-    botoes[i].onclick = () => { 
-        const Imagem = document.querySelector('div#Imagem-Foco');
+    
+    botoes[i].addEventListener( 'mouseup' , () => { 
         const texto = document.querySelector('.Box-banner h1');
-        const html = document.querySelector('html');
+         
         switch (i) {
             case 0:
-                Imagem.style.backgroundImage = 'url("./image/foco.svg")';
-                html.setAttribute('data-contexto','foco');
+                alterarContexto('foco');
+                botoes[i].classList.add('ativar-button');
                 texto.innerHTML = "Otimize sua produtividade,<br><strong>mergulhe no que importa</strong>";                
             break;
             case 1:
-                Imagem.style.backgroundImage = 'url("./image/focoCurto.svg';
-                html.setAttribute('data-contexto','descanso-curto');
+                alterarContexto('descanso-curto');
+                botoes[i].classList.add('ativar-button');
                 texto.innerHTML = 'Que tal dar uma respirada?<br><strong> Faça uma pausa curta!</strong>';
             break;
             case 2:
-                Imagem.style.backgroundImage = 'url("./image/focoLongo.svg';
-                html.setAttribute('data-contexto','descanso-longo');
+                alterarContexto('descanso-longo');
+                botoes[i].classList.add('ativar-button');
                 texto.innerHTML = 'Hora de voltar à superfície.<br><strong>Faça uma pausa longa.</strong>';
             break;
         }
-        for(let I = 0; I < botoes.length ; I++){
-            if (I==i) {
-                botoes[I].classList.add('ativar-button');
-            }else {
-                botoes[I].classList.remove('ativar-button');
-            }
-        }
-    };
+
+    });
+}
+
+function alterarContexto(name) {
+
+    botoes.forEach( (contexto) => {
+        contexto.classList.remove('ativar-button');
+    });    
+
+    document.querySelector('div#Imagem-Foco').style.backgroundImage = `url("./image/${name}.svg`;
+    document.querySelector('html').setAttribute('data-contexto', `${name}`);
 }
 function AdicionarTarefa() {
 
