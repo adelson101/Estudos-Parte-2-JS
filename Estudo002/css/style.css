@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Unbounded:wght@200;400&display=swap');
 
 * {
-    --ModoFoco: linear-gradient(180deg, #8B1FF8 0%, #041832 48.44%, #01080E 100%);
-    --ModoDescansoCurto: linear-gradient(180deg, #0F725C 0%, #041832 48.44%, #01080E 100%);
-    --ModoDescansoLongo: linear-gradient(180deg, #1875E9 0%, #041832 48.44%, #01080E 100%);
     --BotaoLinear: linear-gradient(180deg, #B872FF 0%, #144480 100%);
     --cor1: #B872FF;
     --cor2: #01080E;
@@ -17,24 +14,32 @@
     --FundoDaPagina: linear-gradient(180deg, #8B1FF8 0%, #041832 48.44%, #01080E 100%);
 }
 
+[data-contexto="foco"] {
+    --main-bg-color: linear-gradient(180deg, #8B1FF8 0%, #041832 48.44%, #01080E 100%);
+}
+
+[data-contexto="descanso-curto"] {
+    --main-bg-color: linear-gradient(180deg, #0F725C 0%, #041832 48.44%, #01080E 100%);
+}
+
+[data-contexto="descanso-longo"] {
+    --main-bg-color: linear-gradient(180deg, #1875E9 0%, #041832 48.44%, #01080E 100%);
+}
+
+
 :root {
     font-family: 'Montserrat', sans-serif;
 }
 
-body {
-    background-image: var(--FundoDaPagina);
+html {
+    background-image: var(--main-bg-color);
 }
 
-body::after {
-    content: '';
+body {
     background-image: url('../image/526be9d7c618bc3b9ff652e2a6b81a02.png');
+    background-attachment: scroll;
     background-size: cover;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    opacity: 0.1;
+    background-repeat: no-repeat;  
     z-index: -1;
 }
 
@@ -70,11 +75,12 @@ section {
     background-position: center;
     width: 300px;
     height: 250px;
-    opacity: .9;
+    opacity: 70%;
 }
 
 .box-container-cronometro{
-    width: 310px;
+    max-width: 90%;
+    width: 35rem;
     height: 320px;
     padding: 24px;
     border-radius: 32px;
@@ -121,7 +127,7 @@ section {
     color: var(--cor5);
     text-align: center;
 
-    font-family: Unbounded;
+    font-family: 'Unbounded';
     font-size: 53.7px;
     font-style: normal;
     font-weight: 600;
@@ -239,7 +245,7 @@ input:checked + .slider:before {
     }
 
     section .titulo-tarefas {
-        padding-bottom: 2rem;
+        padding: 1rem 0;
         margin: 0;
         text-align: center;
         font-family: 'Unbounded';
@@ -266,7 +272,7 @@ input:checked + .slider:before {
         height: 40px;
         
         text-align: center;
-        font-family: Montserrat;
+        font-family: 'Montserrat';
         font-size: 18px;
         font-style: normal;
         font-weight: 600;
@@ -382,6 +388,7 @@ input:checked + .slider:before {
 .botoes-tarefa-box {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .botaoNoBorder {
@@ -412,6 +419,7 @@ input:checked + .slider:before {
 .botaoBasic {
     display: flex;
     align-items: center;
+    justify-content: center;
     color: white;
     padding: .8rem;
     background-color: var(--cor2);
@@ -437,5 +445,92 @@ input:checked + .slider:before {
 
 .botaoBasic span, .botaoNoBorder span {
     font-size: 1rem;
+}
+
+@media (min-width: 710px){
+    .Box-banner h1 {
+        font-size: 2.6rem;
+        font-style: normal;
+        font-weight: 200;
+        line-height: 150%; /* 80.55px */
+        width: 460px;
+        margin-top: 0;
+    }   
+
+    header {
+        margin: 30px 0;
+    }
+    
+    section{
+        padding: 0;
+    }
+
+    .botoes-cronometro {
+        gap: .5rem;
+    }
+
+    .botoes-cronometro li > button{
+        font-size: 18px;
+    }
+
+    #Imagem-Foco {
+        margin-bottom: 60px;
+    }
+}
+
+@media (min-width: 980px) {
+
+    .Box-banner {
+        margin: 40px 0 80px 0;
+    }
+
+    .Box-banner h1 {
+        font-size: 52px;
+        margin-right: 3rem;
+    }   
+
+    #Imagem-Foco {
+        width: 483.507px;
+        height: 405.554px;
+        margin: 0;
+    }
+
+    .Box-banner {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 20px 0 40px 0;
+    }
+
+    .box-container-cronometro {
+        height: auto;
+        gap: 1.5rem;
+    }
+
+    .Tempo-cronometro {
+        font-size: 112px;
+    }
+
+    .Tarefas-footer {
+        width: 560px;
+    }
+
+    .titulo-tarefas {
+        width: 560px;
+    }
+
+    .ListaDeTarefas .bloco-tarefa{
+        width: 560px;
+    }
+
+    .botoes-tarefa-box {
+        display: grid;
+        grid-template-columns: 63% 20% 20%;
+    }
+
+    .botoes-tarefa-box li{
+        display: flex;
+        align-items: center;
+    }
 }
 

@@ -2,18 +2,23 @@ const botoes = document.querySelectorAll('ul.botoes-cronometro> li button');
 for (let i = 0; i < botoes.length; i++) {
     botoes[i].onclick = () => { 
         const Imagem = document.querySelector('div#Imagem-Foco');
+        const texto = document.querySelector('.Box-banner h1');
+        const html = document.querySelector('html');
         switch (i) {
             case 0:
                 Imagem.style.backgroundImage = 'url("./image/foco.svg")';
-                document.body.style.background = 'linear-gradient(180deg, #8B1FF8 0%, #041832 48.44%, #01080E 100%)';
+                html.setAttribute('data-contexto','foco');
+                texto.innerHTML = "Otimize sua produtividade,<br><strong>mergulhe no que importa</strong>";                
             break;
             case 1:
                 Imagem.style.backgroundImage = 'url("./image/focoCurto.svg';
-                document.body.style.background = 'linear-gradient(180deg, #0F725C 0%, #041832 48.44%, #01080E 100%)';
+                html.setAttribute('data-contexto','descanso-curto');
+                texto.innerHTML = 'Que tal dar uma respirada?<br><strong> Faça uma pausa curta!</strong>';
             break;
             case 2:
                 Imagem.style.backgroundImage = 'url("./image/focoLongo.svg';
-                document.body.style.background = 'linear-gradient(180deg, #1875E9 0%, #041832 48.44%, #01080E 100%)';
+                html.setAttribute('data-contexto','descanso-longo');
+                texto.innerHTML = 'Hora de voltar à superfície.<br><strong>Faça uma pausa longa.</strong>';
             break;
         }
         for(let I = 0; I < botoes.length ; I++){
@@ -46,7 +51,7 @@ function AdicionarTarefa() {
     TextArea.rows="5"; 
     BlocoTarefa.appendChild(TextArea);
 
-    const divBotoes = document.createElement('div');
+    const divBotoes = document.createElement('ul');
     divBotoes.classList.add('botoes-tarefa-box');
     BlocoTarefa.appendChild(divBotoes);
 
@@ -55,7 +60,8 @@ function AdicionarTarefa() {
     const namesButton = ['Deletar','Cancelar','Salvar']
 
     for (let i = 0; i < 3 ; i++) {
-
+        let listaStyle = document.createElement('li');
+        divBotoes.appendChild(listaStyle);
         botoes[i] = document.createElement('button');
 
         if (i<2) {
@@ -64,7 +70,7 @@ function AdicionarTarefa() {
             botoes[i].classList.add('botaoBasic');
         }
         botoes[i].innerHTML = `<span class="material-symbols-outlined">${namesIcons[i]}</span>${namesButton[i]}`;
-        divBotoes.appendChild(botoes[i]);
+        listaStyle.appendChild(botoes[i]);
         
     }
 
