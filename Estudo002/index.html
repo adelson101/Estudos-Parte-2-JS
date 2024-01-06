@@ -26,11 +26,12 @@
             <h1 class="Tempo-cronometro">00:00</h1>
 
             <div class="box-switch">
-                <label class="switch">
+                <label class="switch" for="caixa-switch">
                     <input type="checkbox" id="caixa-switch">
                     <span class="slider"></span>
                 </label><p> Música</p>
             </div>
+            <input type="range" name="volume" id="volume">
             <button class="BotaoFillDeg"><span class="material-symbols-outlined">play_arrow</span>Começar</button>
         </div>
         <div class="Tarefas-footer">
@@ -45,7 +46,7 @@
         </div>
         <ul class="ListaDeTarefas">
         </ul>
-        <button class="BotaoBorder Roxo Pequeno" onclick="AdicionarTarefa()"><span class="material-symbols-outlined">add_circle</span>Adicionar nova tarefa</button>
+        <button class="BotaoBorder Roxo Pequeno"><span class="material-symbols-outlined">add_circle</span>Adicionar nova tarefa</button>
     </section>
     <footer>
         Projeto fictício e sem fins comerciais. Imagens geradas por IA no Adobe Firefly.<br>Desenvolvido por Alura. 
