@@ -10,6 +10,9 @@ export class Personagem {
         this.nome = nome;
         this.level = level;
         this.tipo = tipo;
+        this.vida = 100;
+        this.mana = 100;
+        
     }
 
     obterInsignia() {
