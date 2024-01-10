@@ -12,7 +12,6 @@ export class Personagem {
         this.tipo = tipo;
         this.vida = 100;
         this.mana = 100;
-        
     }
 
     obterInsignia() {
