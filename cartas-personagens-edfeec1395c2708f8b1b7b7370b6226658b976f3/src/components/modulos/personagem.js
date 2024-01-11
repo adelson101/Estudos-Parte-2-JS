@@ -1,21 +1,36 @@
 export class Personagem {
     nome
-    vida
-    mana
-    level
+    vida = 100
+    mana = 100
+    #level
     static tipo
     static descricao
 
-    constructor(nome,level,tipo) {
+    constructor(nome) {
         this.nome = nome;
-        this.level = level;
-        this.tipo = tipo;
-        this.vida = 100;
-        this.mana = 100;
+        this.#level = 1;
+    }
+
+    get level(){
+        return this.#level;
+    }
+
+    set level(novoLevel){
+        if (novoLevel>0 && novoLevel<=10){
+            this.#level=novoLevel;
+        }
+    }
+    
+    diminuirLevel() {
+        return this.level--;
+    }
+
+    aumentarLevel() {
+        return this.level++;
     }
 
     obterInsignia() {
-        if (this.level>=5) {
+        if (this.#level>=5) {
             return `Inplacavel ${this.constructor.tipo}`;
         } else {
             return 'Iniciante';
