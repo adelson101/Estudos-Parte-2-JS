@@ -1,10 +1,7 @@
 let MaiorValor = 1000;
 let MenorValor = 0;
 
-const ValorSorteado =  NumeroAleatorio();
-console.log('Numero Secreto: '+ValorSorteado);
-
-function NumeroAleatorio() {
+export function NumeroAleatorio() {
    return parseInt(Math.random() * MaiorValor + 1);
 }
 
