@@ -1,7 +1,9 @@
 let MaiorValor = 1000;
 let MenorValor = 0;
 
-export function NumeroAleatorio() {
+let NumeroSecreto = NumeroAleatorio();
+console.log(NumeroSecreto);
+function NumeroAleatorio() {
    return parseInt(Math.random() * MaiorValor + 1);
 }
 

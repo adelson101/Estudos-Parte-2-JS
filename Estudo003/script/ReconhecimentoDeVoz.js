@@ -1,29 +1,21 @@
-import { NumeroAleatorio } from "./SortearNumero.js";
-
-const Botao = document.querySelector('.box');
-const NumeroAleatorioUi = document.querySelector('#Numero-Secreto');
+const ElementoChute = document.querySelector('#chute');
 
 window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
+const recognition = new SpeechRecognition();
+recognition.lang = 'pt-br';
+recognition.start();
 
+recognition.addEventListener('result', onSpeak);
 
-Botao.addEventListener('mouseenter', () => {
-    
-    const recognition = new SpeechRecognition();
-    recognition.lang = 'pt-br';
-    recognition.start();
+function onSpeak(e) {
+    let chute = e.results[0][0].transcript;
+    exibeChuteNaTela(Number(chute));
+    verificarChuteValido(chute);
+}
 
-    recognition.addEventListener('result', (e) => {
+function exibeChuteNaTela(chute) {
+    ElementoChute.innerHTML = `<div>Você disse:</div> <span class="box">${chute}</span>`;
+}
 
-        let Valor = e.results[0][0].transcript;
-        Botao.innerHTML = Number(Valor);
-
-            if (Valor>NumeroAleatorio()) {
-                NumeroAleatorioUi.innerHTML = 'O número secreto é maior <i class="fa-solid fa-arrow-up"></i>';
-            }else if (Valor<NumeroAleatorio()) {
-                NumeroAleatorioUi.innerHTML = 'O número secreto é menor <i class="fa-solid fa-arrow-down"></i>';
-            }
-
-    });
-
-});
+recognition.addEventListener('end', () => recognition.start())
