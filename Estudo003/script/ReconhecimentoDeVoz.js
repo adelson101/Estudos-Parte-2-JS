@@ -10,6 +10,7 @@ recognition.addEventListener('result', onSpeak);
 
 function onSpeak(e) {
     let chute = e.results[0][0].transcript;
+    console.log(chute);
     exibeChuteNaTela(Number(chute));
     verificarChuteValido(chute);
 }
@@ -18,4 +19,4 @@ function exibeChuteNaTela(chute) {
     ElementoChute.innerHTML = `<div>Você disse:</div> <span class="box">${chute}</span>`;
 }
 
-recognition.addEventListener('end', () => recognition.start())
+recognition.addEventListener('end', () => recognition.start());

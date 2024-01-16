@@ -3,7 +3,19 @@ const NumeroAleatorioUi = document.querySelector('#Numero-Secreto');
 function verificarChuteValido(chute){
     const numer = +chute;
     if (ChuteForInvalido(numer)){
-        ElementoChute.innerHTML += '<div>Valor Invalido</div>';
+        if (chute.toUpperCase() === "GAME OVER.") {
+
+            document.body.innerHTML =
+                `
+                <h2>Game Over!!!</h2>
+                <h3>Pressione o botão para jogar novamente</h3>
+                <button id="jogar-novamente" class="btn-jogar" >Jogar novamente</button>
+                `
+                document.body.style.backgroundColor = "black";
+        } else {
+
+            elementoChute.innerHTML += '<div>Valor Inválido</div>';
+        }
         return
     }
 
