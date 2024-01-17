@@ -1,0 +1,23 @@
+/* CABEÇALHO */
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+/* BANNER */
+
+.wrap ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: .5rem;
+}
+
+@media (min-width: 780px){
+
+    .wrap ul{
+        flex-wrap: nowrap;
+    }
+
+}

@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,700;1,400&display=swap');
+
+*,
+*::after,
+*::before{
+    --bg-color: #ffffff;
+    --button-color: #326589;
+}
+
+body {
+    font-family: 'Poppins';
+}
+
+/* CABEÇALHO */
+
+header {
+    width: 100%;
+    padding: .5rem 0;
+}
+
+.Logo-Alura::before {
+    content : url("../Imagem/Logo-1.png");
+}
+
+/* BANNER */
+
+.container__banner {
+    background-image: url('../Imagem/Banner-1.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 150px;
+    width: 100%;
+}
+
+.wrap {
+    margin: .5rem auto;
+    width: 100%;
+}
+
+.btn {
+    padding: 1rem;
+    border-radius: 50px;
+    background-color: var(--button-color);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.267);
+
+    color: var(--bg-color);
+    font-size: .8rem;
+}
+
+.btn:hover,.btn:active {
+    background-color: #00233C;
+}
+
+
+@media (min-width: 780px){
+    .container__banner {
+        height: 273px;
+        background-size: auto;
+    }
+
+    .container__banner::after{
+        content: '';
+        position: absolute;
+        top: 59px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 273px;
+        width: 100%;
+        z-index: -5;
+        background-image: linear-gradient(to right,#00233C,#0F324D);
+    }
+
+    .wrap {
+        width: 80%;
+    }
+    
+}
+
+@media (min-width: 1100px){
+    .wrap {
+        width: 50%;
+    }
+}
