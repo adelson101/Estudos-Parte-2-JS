@@ -35,20 +35,33 @@ barraDePesquisa.addEventListener("input", filtrarPesquisa);
 
 function filtrarPesquisa() {
     const videos = document.querySelectorAll('.videos__item');
+    let valorFiltro = barraDePesquisa.value.toLowerCase();
 
-    if(barraDePesquisa.value != "") {
-        for (let video of videos) {
+        videos.forEach( (video) => {
             let titulo = video.querySelector('.titulo-video').textContent.toLowerCase();
-            let valorFiltro = barraDePesquisa.value.toLowerCase();
             
-            if(!titulo.includes(valorFiltro)) {
-                video.style.display = 'none';
-            }else {
-                video.style.display = 'block';
-            }
-        
+            video.style.display = valorFiltro ? titulo.includes(valorFiltro) ? 'block' : 'none' : 'block' ;
+        });
+
+}
+
+const botaoCategoria = document.querySelectorAll(".superior__item");
+
+botaoCategoria.forEach((botao) => {
+    let nomeCategoria = botao.getAttribute("name");
+
+    botao.addEventListener("click", () => filtrarPorCategoria(nomeCategoria));
+});
+
+function filtrarPorCategoria(filtro) {
+    const videos = document.querySelectorAll('.videos__item');
+    const valorFiltro = filtro.toLowerCase();
+
+    for(let video of videos) {
+        const videoCategorias = video.querySelector('.categoria').textContent.toLowerCase();
+        video.style.display = videoCategorias==valorFiltro ? 'block' : 'none';
+        if (filtro=='Tudo') {
+            video.style.display='block';
         }
-    } else {
-        video.style.display = 'block';
-    }
+    } 
 }
