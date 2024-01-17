@@ -5,9 +5,34 @@ header {
     justify-content: center;
 }
 
+/* ANUNCIO DOS LIVROS */
+
+.livro, .livros {
+    display: flex;
+    align-items: center;
+}
+
+.livros {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.livro {
+    flex-direction: column;
+    align-items: center;
+}
+
+.tags {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 /* BANNER */
 
-.wrap ul{
+.wrap{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -16,7 +41,11 @@ header {
 
 @media (min-width: 780px){
 
-    .wrap ul{
+    .livros {
+        justify-content: space-between;
+    }
+
+    .wrap{
         flex-wrap: nowrap;
     }
 
