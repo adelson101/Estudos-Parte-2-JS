@@ -54,6 +54,7 @@ nav, .livros {
 
     color: var(--bg-color);
     font-size: .8rem;
+    cursor: pointer;
 }
 
 .active,.btn:hover,.btn:active {
