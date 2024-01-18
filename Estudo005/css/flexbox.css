@@ -42,7 +42,7 @@ header {
 @media (min-width: 780px){
 
     .livros {
-        justify-content: start;
+        justify-content: center;
     }
 
     .wrap{
