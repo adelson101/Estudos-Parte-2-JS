@@ -62,6 +62,10 @@ nav, .livros {
 
 /* ANUNCIO DOS LIVROS */
 
+.livro_indisponivel {
+    opacity: .5 ;
+}
+
 .livro {
     width: 305px;
     margin-bottom: 1rem;
@@ -104,6 +108,47 @@ nav, .livros {
     font-size: 1.8rem;
     font-weight: bold;
     color: var(--text-price-color);
+}
+
+/* TODOS OS LIVROS DISPONIVEIS */
+
+.livros_disponiveis {
+    width: 100%;
+    height: 80px;
+    background-color: var(--text-description-color);
+    margin-top: 1rem;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.livros_disponiveis p {
+    color: var(--bg-color);
+    font-weight: 500;
+    line-height: 1.5rem;
+    font-size: 2.5rem;
+}
+
+/* RODAPE */
+
+.rodape {
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(96.48deg, #002f52 36.3%, #326589 99.56%);
+    margin-top: 1rem;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rodape p {
+    color: var(--bg-color);
+    font-weight: 500;
+    line-height: 1.5rem;
 }
 
 @media (min-width: 780px){
