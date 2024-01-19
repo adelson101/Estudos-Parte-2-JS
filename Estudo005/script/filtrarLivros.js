@@ -8,30 +8,33 @@ TipoDeFiltro.forEach( (botao) => botao.addEventListener('click' , filtrarLivros 
 
 function filtrarLivros() {
     const ElementoBtn = document.getElementById(this.id);
+    LimparBotoes(ElementoBtn);
     const categoria = ElementoBtn.value;
-    let livrosFiltrados = [];
-    if (categoria!="") {
-        livrosFiltrados = ListaDeLivros.filter( livro => livro.categoria == categoria );
-    }else {
-        switch(ElementoBtn.getAttribute('id')) {
-            case 'btnFiltrarLivrosDisponiveis':
-                livrosFiltrados = ListaDeLivros.filter( livro => livro.quantidade > 0 ); 
-            break;
-            case 'btnFiltrarLivrosPorPreco':
-                livrosFiltrados = ListaDeLivros.sort( function(a,b) {
-                    if ( a.preco > b.preco ) {
-                        return 1;
-                    }
-                    if ( a.preco < b.preco) {
-                        return -1;
-                    }
-                    return 0;
-                } );
-            break;
-        }
-    }
+    let livrosFiltrados = categoria == 'disponivel' ? FiltrarPorDisponivel() : FiltrarPorCategoria(categoria);
     ExibirListaDeLivros(livrosFiltrados);
+    if (categoria == 'disponivel') {
+        const ValorTotal = CalcularValorTotal(livrosFiltrados);
+        elementoComValorDeLivrosDisponivei(ValorTotal);
+    }
 }
+
+function FiltrarPorCategoria(categoria) {
+    return ListaDeLivros.filter(livro => livro.categoria == categoria);
+}
+
+function FiltrarPorDisponivel() {  
+    return ListaDeLivros.filter(livro => livro.quantidade > 0);
+}
+
+function elementoComValorDeLivrosDisponivei(ValorTotal) {
+    elementoComValorDeLivrosDisponiveis.innerHTML = `<div class="livros_disponiveis"><p>Todos os livros disponíveis por R$ <span id="valor">${ValorTotal}</span></p></div>`;
+}
+
+const OrdernarPorPreco = TipoDeFiltro[4];
+OrdernarPorPreco.addEventListener (('click'), () => {
+    const livrosFiltrados = ListaDeLivros.sort( (a,b) => a.preco - b.preco );
+    ExibirListaDeLivros(livrosFiltrados);
+})
 
 // EVENTOS DOS ESTILO DO ESTILO
 

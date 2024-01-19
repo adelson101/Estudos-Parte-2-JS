@@ -30,6 +30,12 @@ header {
     flex-wrap: wrap;
 }
 
+.livro__precos {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
 /* BANNER */
 
 .wrap{

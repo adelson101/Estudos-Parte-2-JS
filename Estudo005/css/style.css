@@ -102,6 +102,7 @@ nav, .livros {
     font: 1.1rem;
     color: var(--text-author-color);
     margin: 1rem 0;
+    width: 100%;
 }
 
 .livro__preco {
@@ -117,6 +118,8 @@ nav, .livros {
     font-weight: bold;
     color: var(--text-price-color);
     text-decoration: none;
+    width: 100%;
+    margin: .8rem 0;
 }
 
 .desconto {
@@ -124,6 +127,18 @@ nav, .livros {
     color: var(--text-description-color);
     font-weight: 500;
     font-size: 1.2rem;
+    display: inline-block;
+}
+
+.livro__desconto__quantidade {
+    border-radius: 15px;
+    padding: 5px;
+    background-color: var(--text-description-color);
+    color: var(--bg-color);
+    display: inline;
+
+    font-size: .8rem;
+    text-align: center;
 }
 
 
