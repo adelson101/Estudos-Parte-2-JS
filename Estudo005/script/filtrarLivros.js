@@ -10,9 +10,24 @@ function filtrarLivros() {
     const ElementoBtn = document.getElementById(this.id);
     LimparBotoes(ElementoBtn);
     const categoria = ElementoBtn.value;
-    console.log(categoria);
-    let livrosFiltrados = categoria == 'disponivel' ? ListaDeLivros.filter( livro => livro.quantidade > 0 ) : ListaDeLivros.filter( livro => livro.categoria == categoria );
+    let livrosFiltrados = categoria == 'disponivel' ? FiltrarPorDisponivel() : FiltrarPorCategoria(categoria);
     ExibirListaDeLivros(livrosFiltrados);
+    if (categoria == 'disponivel') {
+        const ValorTotal = CalcularValorTotal(livrosFiltrados);
+        elementoComValorDeLivrosDisponivei(ValorTotal);
+    }
+}
+
+function FiltrarPorCategoria(categoria) {
+    return ListaDeLivros.filter(livro => livro.categoria == categoria);
+}
+
+function FiltrarPorDisponivel() {  
+    return ListaDeLivros.filter(livro => livro.quantidade > 0);
+}
+
+function elementoComValorDeLivrosDisponivei(ValorTotal) {
+    elementoComValorDeLivrosDisponiveis.innerHTML = `<div class="livros_disponiveis"><p>Todos os livros disponíveis por R$ <span id="valor">${ValorTotal}</span></p></div>`;
 }
 
 const OrdernarPorPreco = TipoDeFiltro[4];

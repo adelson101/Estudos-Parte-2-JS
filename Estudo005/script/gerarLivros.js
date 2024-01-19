@@ -1,8 +1,10 @@
+const elementoComValorDeLivrosDisponiveis = document.getElementById('valor_total_livros_disponiveis');
+
 function ExibirListaDeLivros(ListaDeLivros) {
     const LivrosComDesconto = aplicarDesconto(ListaDeLivros);
-
     const ElementoLivro = document.getElementById('livros');
-    
+
+    elementoComValorDeLivrosDisponiveis.innerHTML = '';
     ElementoLivro.innerHTML = '';
 
     ListaDeLivros.forEach( (livro,i) => {
