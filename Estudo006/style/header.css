@@ -1,0 +1,119 @@
+/* CABECALHO */
+
+header {
+    padding: 1rem;
+    z-index: 2;
+    background-color: white;
+    box-shadow: 0px 0px 6px 6px rgba(0, 0, 0, 0.062);
+}
+
+.header__Logo {
+    border: none;
+    background: none;
+
+    cursor: pointer;
+}
+
+.header__Logo::after {
+    content: url('../img/cabecalho/Logo.png');
+}
+
+.container__pesquisar {
+    position: relative;
+}
+
+.header__pesquisar {
+    border: 1px solid rgba(0, 0, 0, 0.514);
+    border-radius: 50px;
+
+    height: 30px;
+    width: auto;
+    padding: 1rem;
+}
+
+.header__pesquisar::placeholder {
+    font-size: 1rem;
+}
+
+.header__pesquisar_botao {
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    height: 20px;
+    width: 20px;
+
+    position: absolute;
+    top: 8px;
+    right: 12px;
+
+    z-index: 4;
+
+}
+
+.header__pesquisar_botao::after {
+    content: url('../img/cabecalho/search.png');
+}
+
+.header__botao_adicionarVideo {
+    display: none;
+    border: none;
+
+    width: 50px;
+    height: 50px;
+
+    background: url('../img/cabecalho/video_call.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+}
+
+/* BOTAO INFERIOR MOBILE */
+
+.barra__inferior_mobile{
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+    height: 40px;
+    box-shadow: 0px 0px 13px 8px rgba(0, 0, 0, 0.082);
+    z-index: 3;
+    background-color: white;
+}
+
+.header__mobile_botao_adicionarVideo {
+    height: 60px;
+    width: 60px;
+    border-radius: 50px;
+    border: none;
+
+    background-color: #08326F;
+    box-shadow: 0px 0px 3px 3px #051a366c inset;
+
+    position: relative;
+    bottom: 20px;
+    
+    background-image: url('../img/cabecalho/video_call_mobile.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+}
+
+@media (min-width:650px) {
+
+    header {
+        padding: 1rem 2rem;
+    }
+
+    .barra__inferior_mobile {
+        display: none;
+    }
+
+    .header__botao_adicionarVideo {
+        display: block;
+    }
+
+    .header__pesquisar {
+        width: 300px;
+    }
+}

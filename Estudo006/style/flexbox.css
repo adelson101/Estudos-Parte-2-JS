@@ -1,0 +1,29 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.center {
+    justify-content: center;
+}
+
+.barra__inferior_mobile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__pesquisar_botao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width:650px) {
+
+    .center {
+        justify-content: space-between;
+    }
+
+}

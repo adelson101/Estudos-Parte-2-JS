@@ -1,0 +1,9 @@
+@import url("header.css");
+
+* {
+    --bkg: #DFEBFA;
+}
+
+body {
+    background-color: var(--bkg);
+}
