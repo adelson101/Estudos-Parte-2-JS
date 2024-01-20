@@ -71,7 +71,7 @@ header {
 /* BOTAO INFERIOR MOBILE */
 
 .barra__inferior_mobile{
-    position: absolute;
+    position: fixed;
     bottom: 0;
 
     width: 100%;
@@ -97,6 +97,7 @@ header {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 60%;
+    z-index: 5;
 }
 
 @media (min-width:650px) {
