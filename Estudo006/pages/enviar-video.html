@@ -8,10 +8,33 @@
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../style/flexbox.css">
-    <link rel="stylesheet" href="../style/Estilos.css">
+    <link rel="stylesheet" href="../style/EnviarVideo.css">
 </head>
 <body>
     <script src="../script/header.js"></script>
+    <main class="container">
+        <form method="post" class="Formulario__NovoVideo">
 
+            <h2 class="Formulario__Titulo">Envie um vídeo!</h2>
+            
+            <div class="formulario__campo">
+                <label for="url" class="campo__etiqueta">Link Embed</label>
+                <input class="campo__escrita" type="url" name="LinkEmbed" id="url" placeholder="Por exemplo: https://www.youtube.com/embed/FAY1K2aUg5g" required>
+            </div>
+
+            <div class="formulario__campo">
+                <label for="titulo" class="campo__etiqueta">Titulo do vídeo</label>
+                <input class="campo__escrita" type="text" name="TituloVideo" id="titulo" placeholder="Neste campo, dê o nome do vídeo" required>
+            </div>
+
+            <div class="formulario__campo">
+                <label for="imagem" class="campo__etiqueta">Imagem de perfil</label>
+                <input class="campo__escrita" type="url" name="ImagemDoPerfil" id="imagem" placeholder="Insira a url da imagem" required>
+            </div>
+
+            <input type="submit" value="Enviar" class="formulario__botao">
+
+        </form>
+    </main>
 </body>
 </html>
