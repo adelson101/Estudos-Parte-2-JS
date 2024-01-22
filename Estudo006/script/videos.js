@@ -1,9 +1,10 @@
-function GerarUIVideos(videos){
-    const BoxVideos = document.getElementById('Container__video');
-    BoxVideos.innerHTML = '';
+const CardVideos = document.querySelector('[data-lista]');
+
+export function GerarUIVideos(videos){
+    CardVideos.innerHTML = '';
 
     videos.forEach( (video) => {
-        BoxVideos.innerHTML += `
+        CardVideos.innerHTML += `
         <li class="video__item">
             <iframe width="100%" height="72%" src="${video.url}" title="${video.titulo}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 <div class="descricao-video">

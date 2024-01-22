@@ -1,3 +1,5 @@
+import { GerarUIVideos } from "./videos.js";
+
 let ListaDeVideos = [];
 var EndPoint = 'http://localhost:3000/videos';
 
