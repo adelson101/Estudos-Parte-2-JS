@@ -1,0 +1,17 @@
+.cabecalho__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-basis: 100%;
+}
+
+.cabecalho__logo {
+    display: flex;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem
+    ;
+}
