@@ -21,8 +21,8 @@ function GerarHeader () {
     <header ${TipoLogo}>
         <a class="header__Logo" href="${IndexPagina}"></a>
         <label class="container__pesquisar" for="pesquisarVideo" ${VerificarPagina}>
-            <input type="search" name="pesquisarVideo" id="pesquisarVideo" class="header__pesquisar" placeholder="Pesquisar">
-            <button class="header__pesquisar_botao"></button>
+            <input type="search" name="pesquisarVideo" id="pesquisarVideo" class="header__pesquisar" placeholder="Pesquisar" data-pesquisar>
+            <button class="header__pesquisar_botao" data-botao-pesquisa></button>
         </label>
         <a class="header__botao_adicionarVideo" href="${PaginaVideo}"></a>
     </header>

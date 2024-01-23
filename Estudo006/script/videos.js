@@ -1,6 +1,6 @@
 const CardVideos = document.querySelector('[data-lista]');
 
-export function GerarUIVideos(videos){
+export function GerarVideos(videos){
     CardVideos.innerHTML = '';
 
     videos.forEach( (video) => {
@@ -16,4 +16,5 @@ export function GerarUIVideos(videos){
         `;
     });
 
+    return CardVideos;
 }
