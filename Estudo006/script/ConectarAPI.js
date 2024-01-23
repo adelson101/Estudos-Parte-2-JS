@@ -1,10 +1,11 @@
 import { GerarVideos } from "./videos.js";
 
 var EndPoint = 'http://localhost:3000/videos';
+export let ListaDeVideos;
 
 async function AcessandoAPI () {
     const AcessandoAPI = await fetch(EndPoint);
-    const ListaDeVideos = await AcessandoAPI.json();
+    ListaDeVideos = await AcessandoAPI.json();
     return GerarVideos(ListaDeVideos);
 }
 
@@ -26,14 +27,7 @@ async function CriarVideoAPI(titulo,descricao,url,imagem) {
     return ConexaoConvertida;
 }
 
-export async function PesquisarVideo(termoDeBusca) {
-    const AcessandoAPI = await fetch(`http://localhost:3000/videos?q=${termoDeBusca}`);
-    const conexao = await AcessandoAPI.json();
-    return conexao;
-}
-
 export const ConectarApi = {
     AcessandoAPI,
-    CriarVideoAPI,
-    PesquisarVideo
+    CriarVideoAPI
 }
