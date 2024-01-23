@@ -11,8 +11,6 @@ async function Pesquisar(evento) {
     if(Pesquisa!=''){
         const PesquisarVideo = ListaDeVideos.filter( (video) => video.titulo.toLowerCase().includes(Pesquisa) );
         GerarVideos(PesquisarVideo);
-    }else {
-        GerarVideos(ListaDeVideos);
     }
     
 }

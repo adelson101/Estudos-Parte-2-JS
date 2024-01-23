@@ -1,3 +1,8 @@
-import { ConectarApi } from "./ConectarAPI.js";
+import { AcessandoAPI } from "./ConectarAPI.js";
+import { GerarVideos } from "./videos.js";
 
-ConectarApi.AcessandoAPI();
+async function ExecutarAPI() {
+   GerarVideos(await AcessandoAPI());
+}
+
+ExecutarAPI();

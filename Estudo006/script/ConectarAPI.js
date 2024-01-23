@@ -1,12 +1,15 @@
-import { GerarVideos } from "./videos.js";
 
 var EndPoint = 'http://localhost:3000/videos';
 export let ListaDeVideos;
 
-async function AcessandoAPI () {
-    const AcessandoAPI = await fetch(EndPoint);
-    ListaDeVideos = await AcessandoAPI.json();
-    return GerarVideos(ListaDeVideos);
+export async function AcessandoAPI () {
+    try {
+        const AcessandoAPI = await fetch(EndPoint);
+        ListaDeVideos = await AcessandoAPI.json();
+        return ListaDeVideos;
+    } catch (error) {
+        return error;
+    }
 }
 
 async function CriarVideoAPI(titulo,descricao,url,imagem) {
@@ -22,6 +25,10 @@ async function CriarVideoAPI(titulo,descricao,url,imagem) {
             imagem: imagem
         })
     });
+    
+    if (!conexaoAPI.ok) {
+        throw new Error('Não foi possível enviar o video');
+    }
 
     const ConexaoConvertida = await conexaoAPI.json();
     return ConexaoConvertida;
