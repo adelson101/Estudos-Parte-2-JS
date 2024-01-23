@@ -49,6 +49,14 @@
     color: white;
 }
 
+.Imagem_de_concluida {
+    background: url('../img/upload.png');
+    background-position: center;
+    background-size: cover;
+    width: 350px;
+    height: 350px;
+}
+
 .formulario__botao:hover, .formulario__botao:active {
     background-color: var(--azul-escuro);
 }
