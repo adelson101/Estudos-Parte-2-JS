@@ -1,8 +1,16 @@
-.cabecalho__nav {
+.Container__cabecalho {
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-basis: 100%;
+}
+
+.cabecalho__nav {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-basis: 100%;
+    gap: 1rem;
 }
 
 .cabecalho__logo {
@@ -12,6 +20,17 @@
 .logo {
     display: flex;
     align-items: center;
-    gap: 1rem
-    ;
+    gap: 1rem;
+}
+
+@media (min-width:768px) {
+    .cabecalho__nav {
+        margin: 0 2rem;
+    }
+}
+
+@media (min-width:1024px) {
+    .cabecalho__nav {
+        justify-content: space-around;
+    }
 }

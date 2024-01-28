@@ -1,0 +1,114 @@
+/* HEADER */
+
+.Container__cabecalho {
+    background-color: black;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.cabecalho__logo {
+    background-image: url('../img/LOGO.png');
+    background-repeat: repeat;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+}
+
+.cabecalho__nav .cabecalho__nav_item:nth-child(1),.cabecalho__nav .cabecalho__nav_item:nth-child(2),.cabecalho__nav .cabecalho__nav_item:nth-child(3),.logo h2 {
+    display: none;
+}
+
+.cabecalho__nav_link {
+    text-decoration: none;
+    background: linear-gradient(0deg, rgba(168,108,18,1) 0%, rgba(255,202,100,1) 50%, rgba(197,146,37,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+.cabecalho__nav_link:hover {
+    font-weight: 900;
+    transition: all .3s ease-out;
+}
+
+.cabecalho__nav_link:hover:before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 22px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(168,108,18,1) 0%, rgba(255,202,100,1) 50%, rgba(197,146,37,1) 100%);
+    transition: all .5s ease-out;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 1.4rem;
+
+    background: linear-gradient(0deg, rgba(168,108,18,1) 0%, rgba(255,202,100,1) 50%, rgba(197,146,37,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+strong {
+    font-weight: 900;
+}
+
+.cabecalho__nav_pesquisar {
+    border-radius: 50px;
+    width: 20vw;
+    padding: .6rem 1rem;
+    border: none;
+    
+    font-size: 1rem;
+}
+
+.cabecalho__nav_pesquisar::placeholder {
+    background-image: url('../img/Icon/ícone\ busca.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+.cabecalho__nav_botao{
+    display: block;
+    padding: .5rem 1rem;
+    background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)) padding-box,
+    linear-gradient(0deg, rgba(168,108,18,1) 0%, rgba(255,202,100,1) 50%, rgba(197,146,37,1) 100%) border-box;
+    border-radius: 50em;
+    border: 4px solid transparent;
+    text-decoration: none;
+
+    text-align: center;
+}
+
+.cabecalho__nav_botao-dourado {
+    background:
+    linear-gradient(0deg, rgba(168,108,18,1) 0%, rgba(255,202,100,1) 50%, rgba(197,146,37,1) 100%) border-box;
+}
+
+.abrir-conta::after{
+    content: 'Abrir Conta';
+    font-weight: 600;
+    color: black;
+}
+
+.Acessar-Conta::after{
+    content: 'Acessar Conta';
+    font-weight: 600;
+    background-image: linear-gradient(0deg, rgba(168,108,18,1) 0%, rgba(255,202,100,1) 50%, rgba(197,146,37,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@media (min-width:905px) {
+    .cabecalho__nav {
+        justify-content: space-around;
+    }
+
+    .cabecalho__nav .cabecalho__nav_item:nth-child(1),.cabecalho__nav .cabecalho__nav_item:nth-child(2),.cabecalho__nav .cabecalho__nav_item:nth-child(3),.logo h2 {
+        display: block;
+    }
+}
